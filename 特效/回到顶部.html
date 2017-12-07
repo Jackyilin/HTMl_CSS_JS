@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>哈哈</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            height: 2000px;
+        }
+
+        #div1 {
+            width: 50px;
+            height: 50px;
+            position: fixed;
+            right: 5px;
+            bottom: 5px;
+            background: #0f0;
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+hahah
+<div id="div1">go!</div>
+<script>
+    var oDiv1 = document.getElementById("div1");
+    oDiv1.onclick = function() {
+        var scrollTop = 0;
+        var timer = setInterval(function() {
+            scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            window.scrollTo(0, scrollTop -= 10);
+            if (scrollTop <= 0) {
+                clearInterval(timer);
+            }
+        }, 30);
+    };
+</script>
+</body>
+
+</html>
